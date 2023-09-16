@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_bgvsj"]
 [ext_resource type="Theme" uid="uid://iwbv0h32ikfr" path="res://assets/new_theme.tres" id="1_bu1vj"]
-[ext_resource type="PackedScene" uid="uid://drssupolcvhf6" path="res://levels/demo_platformer.tscn" id="3_3snba"]
+[ext_resource type="PackedScene" uid="uid://drssupolcvhf6" path="res://levels/platformer/demo.tscn" id="3_benbl"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme = ExtResource("1_bu1vj")
 script = ExtResource("1_bgvsj")
-next_scene = ExtResource("3_3snba")
+next_scene = ExtResource("3_benbl")
 
 [node name="LabelTitle" type="Label" parent="."]
 layout_mode = 2

@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkj22l60ehwjl"]
+
+[ext_resource type="Texture2D" uid="uid://dm4bpyx733i3y" path="res://assets/skull.png" id="1_ffu6i"]
+[ext_resource type="Script" path="res://levels/platformer/player.gd" id="1_xdocu"]
+
+[sub_resource type="Animation" id="Animation_662wy"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_bxisr"]
+resource_name = "default"
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m5qvt"]
+_data = {
+"RESET": SubResource("Animation_662wy"),
+"default": SubResource("Animation_bxisr")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o0p5o"]
+radius = 8.0
+height = 16.0
+
+[node name="player_platformer" type="CharacterBody2D" groups=["players"]]
+script = ExtResource("1_xdocu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_m5qvt")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ffu6i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_o0p5o")
